@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>G-Snake</title>
+    <style>
+      body
+      {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0;
+        background-color: black;
+      }
+
+      #game-board{
+        background-color: #CCC;
+        /*Takes the minimum of width and height based on the browser window*/
+        /*Makes Website Responsive*/
+        width: 100vmin;
+        height: 100vmin;
+        display: grid;
+        /*creates 21 rows and 21 columns, Each taking one fraction of available height and width of the grid container*/
+        grid-template-rows: repeat(21,1fr);
+        grid-template-columns: repeat(21,1fr);
+      }
+
+      .snake{
+        background-color: hsl(200,100%,50%);
+        /*Responsive border*/
+        border: .25vmin solid black;
+      }
+
+      .food{
+        background-color: hsl(50,100%,50%);
+        /*Responsive border*/
+        border: .25vmin solid black;
+      }
+
+      #score{
+        background-color: aqua;
+        color: black;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+       
+      .speed-buttons{
+        display:grid;
+        grid-gap: 1rem;
+      }
+
+      .speed-buttons button
+      {
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      #control{
+        margin: 20px;
+      }
+    </style>
+   
+</head>
+<body>
+  <script src="game.js" defer type="module"></script>
+    <div id="control">
+    <div id="score">Score : 0</div>
+    <div class="speed-buttons">
+      <button id="slow" style="background-color: rgb(0, 207, 0);border-radius: 7px;border: 2px solid white;">Slow</button>
+      <button id="medium" style="background-color: gold;border-radius: 7px;border: 2px solid white;">Medium</button>
+      <button id="fast" style="background-color: rgb(240, 37, 37);border-radius: 7px;border: 2px solid white;">Fast</button>
+    </div>
+    </div>
+    <div id="game-board"></div>
+
+  </body>
+</html>
